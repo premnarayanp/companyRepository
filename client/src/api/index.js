@@ -88,9 +88,11 @@ export const deleteCompany = async (id) => {
   });
 };
 
-export const searchCompany = async (query) => {
+export const searchCompany = async (data) => {
   return customFetch(API_URLS.searchCompany(), {
     method: 'POST',
+    body: { ...data }
+
   });
 };
 

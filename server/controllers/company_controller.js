@@ -49,9 +49,12 @@ const companyController = {
 
     searchCompany: async (req, res) => {
         try {
-            const { query } = req.body;
+            const { searchText } = req.body;
+
+            console.log("req.body;", req.body)
             const companies = await Company.find({
-                $text: { $search: query }
+                // $text: { $search: searchText }
+                companyName: searchText
             });
             // res.status(200).json(companies);
             res.status(200).json({ success: true, msg: "Company found successfully", data: companies });

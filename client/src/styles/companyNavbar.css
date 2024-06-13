@@ -28,6 +28,10 @@
     border: solid 2px gray;
 }
 
+.search_nav {
+    justify-content: center;
+}
+
 .home_nav .search_bar {
     height: 50px;
     width: 40%;
@@ -39,6 +43,10 @@
     border-radius: 10px;
     padding: 0 20px;
     background-color: rgb(229, 242, 252);
+}
+
+#file_input {
+    display: none;
 }
 
 .search_bar input {
@@ -97,4 +105,19 @@
 .user-icon-container img {
     height: 100%;
     width: 100%;
+}
+
+#search_label {
+    justify-content: center;
+    padding: 0;
+    /* height: 40px; */
+    width: 250px;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+#search_label u {
+    color: white;
+    font-weight: 500;
 }
