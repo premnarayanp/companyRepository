@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import { useSelector } from 'react-redux';
 import '../styles/app.css'
-import { Home, Login, Signup, } from '../pages/index';
+import { Home, Login, Signup, Company, Search } from '../pages/index';
 
 function App(props) {
   const auth = useSelector((state) => state.authReducer);
@@ -25,6 +25,8 @@ function App(props) {
       <Navbar />
       <Routes>
         <Route path="/" element={<PrivateRoute> <Home /> </PrivateRoute>} />
+        <Route exact path="/company" element={<PrivateRoute> <Company /> </PrivateRoute>} />
+        <Route exact path="/search" element={<PrivateRoute> <Search /> </PrivateRoute>} />
         <Route exact path="/users/login" element={<Login />} />
         <Route exact path="/users/signup" element={<Signup />} />
         <Route path="*" element={<Page404 />} />

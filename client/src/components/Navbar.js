@@ -19,6 +19,14 @@ function Navbar(props) {
           <button className='menuButton'>Home</button>
         </Link>
 
+        <Link to="/company">
+          <button className='menuButton'>Company</button>
+        </Link>
+
+        <Link to="/search">
+          <button className='menuButton'>Search</button>
+        </Link>
+
         <button className='menuButton' onClick={logoutFromDevice}>Log out</button>
 
         <div className='rounded-img-container'>

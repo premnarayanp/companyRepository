@@ -1,7 +1,86 @@
-.Home {
+/* .Home {
     padding: 2px;
     box-sizing: border-box;
     overflow: hidden;
     height: 92%;
     width: 100%;
+} */
+
+.Home {
+    padding: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* height: 92%; */
+    height: 90%;
+    width: 98%;
+    border: solid 1px gray;
+    margin-left: 1%;
+    background-color: white;
+    position: relative;
+}
+
+
+/* ==================home main===================== */
+
+.home_main {
+    margin: 10px 1%;
+    height: 77%;
+    width: 98%;
+    border: solid 1px gray;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.table-container {
+    height: 94%;
+    overflow: hidden;
+}
+
+.user_info_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user_info_table thead {
+    background-color: rgb(234, 197, 143);
+}
+
+.user_info_table thead th {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    color: white;
+}
+
+
+/* .user_info_table .t :hover {
+    background-color: gray;
+} */
+
+.user_info_table tbody td {
+    text-align: start;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+
+/* .user_info_table tbody tr {
+    position: relative;
+} */
+
+.user_info_table tbody button,
+a {
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 12px;
+    outline: none;
+    border: solid 1px gray;
+}
+
+.user_info_table tbody a {
+    text-decoration: none;
+    padding: 2px 10px;
 }

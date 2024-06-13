@@ -4,10 +4,12 @@ export const API_URLS = {
   //API URL for User
   login: () => `${API_ROOT}/users/login`,
   signup: () => `${API_ROOT}/users/signup`,
-  // allUser: (id) => `${API_ROOT}/users/all-users/${id}`,
-  // getAllMessage: () => `${API_ROOT}/message/getall-message`,
-  // addMessage: () => `${API_ROOT}/message/add-message`,
-  // getUserIsOnline:(userId)=> `${API_ROOT}/users/is-online-user/${userId}`,
+  allCompanyData: () => `${API_ROOT}/company/getall-company`,
+  addCompany: () => `${API_ROOT}/company/add-company`,
+  updateCompany: (id) => `${API_ROOT}/company/update-company/${id}`,
+  deleteCompany: (id) => `${API_ROOT}/company/delete-company/${id}`,
+  searchCompany: () => `${API_ROOT}/company/search`,
+  addExcelData: () => `${API_ROOT}/add-excel-data`,
 };
 
 export const LOCAL_STORAGE_TOKEN_KEY = '_COMPANY_REPOSITORY_JS_';

@@ -62,22 +62,42 @@ export const signUp = async (name, email, password, confirmPassword) => {
   });
 };
 
-// export const allUser = async (id) => {
-//   return customFetch(API_URLS.allUser(id), {
-//     method: 'GET',
-//   });
-// };
+export const allCompanyData = async (id) => {
+  return customFetch(API_URLS.allCompanyData(), {
+    method: 'GET',
+  });
+};
 
-// export const getAllMessage = async (from,to) => {
-//   return customFetch(API_URLS.getAllMessage(), {
-//     method: 'POST',
-//     body: { from,to },
-//   });
-// };
+export const addCompany = async (data) => {
+  return customFetch(API_URLS.addCompany(), {
+    method: 'POST',
+    body: { ...data },
+  });
+};
 
-// export const addMessage = async (msg) => {
-//   return customFetch(API_URLS.addMessage(), {
-//     method: 'POST',
-//     body: msg,
-//   });
-// };
+export const updateCompany = async (data, id) => {
+  return customFetch(API_URLS.updateCompany(id), {
+    method: 'POST',
+    body: { ...data },
+  });
+};
+
+export const deleteCompany = async (id) => {
+  return customFetch(API_URLS.deleteCompany(id), {
+    method: 'DELETE',
+  });
+};
+
+export const searchCompany = async (query) => {
+  return customFetch(API_URLS.searchCompany(), {
+    method: 'POST',
+  });
+};
+
+export const addExcelData = async (file) => {
+  return customFetch(API_URLS.addExcelData(), {
+    method: 'POST',
+  });
+};
+
+

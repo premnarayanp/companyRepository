@@ -1,0 +1,125 @@
+.UserForm {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 40%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.userForm {
+    z-index: 1;
+    width: 100%;
+    min-width: 300px;
+    margin: 10px auto;
+    margin-bottom: 0;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: solid 1px gray;
+    border-top: 0;
+}
+
+.userHeader {
+    font-weight: 600;
+    font-size: 30px;
+    color: #ef7917;
+}
+
+.field {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.field input {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.field button {
+    width: 100%;
+    background: rgb(238, 65, 94);
+    margin-top: 10px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+    padding: 9px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+.field button:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.field input:focus {
+    outline: none;
+}
+
+.radioField {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.radioField span {
+    margin-right: 20px;
+}
+
+.radioField input {
+    margin-left: 20px;
+}
+
+.closeUserFormBtn {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    top: 20px;
+    left: 10px;
+    overflow: hidden;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    /* background-color: rgb(227, 195, 145); */
+}
+
+.closeUserFormBtn img {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* .forms select {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 300;
+} */
