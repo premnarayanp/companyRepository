@@ -1,6 +1,6 @@
 // server/controllers/company_controller.js
 import Company from '../models/company.js';
-//import xlsx from 'xlsx';
+import xlsx from 'xlsx';
 
 const companyController = {
     addCompany: async (req, res) => {
@@ -50,8 +50,6 @@ const companyController = {
     searchCompany: async (req, res) => {
         try {
             const { searchText } = req.body;
-
-            console.log("req.body;", req.body)
             const companies = await Company.find({
                 // $text: { $search: searchText }
                 companyName: searchText
@@ -64,25 +62,28 @@ const companyController = {
     },
 
     addExcelData: async (req, res) => {
-        //     try {
-        //         const workbook = xlsx.read(req.file.buffer, { type: 'buffer' });
-        //         const sheetName = workbook.SheetNames[0];
-        //         const worksheet = workbook.Sheets[sheetName];
-        //         const data = xlsx.utils.sheet_to_json(worksheet);
+        // console.log("=======req.file====", req.file);
+        try {
+            const workbook = xlsx.read(req.file.buffer, { type: 'buffer' });
+            const sheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[sheetName];
+            const data = xlsx.utils.sheet_to_json(worksheet);
 
-        //         const companies = data.map((item) => ({
-        //             companyName: item.companyName,
-        //             emailId: item.emailId,
-        //             message: item.message,
-        //         }));
+            console.log("=======data====", data);
+            const companies = data.map((item) => ({
+                companyName: String(item.companyName),
+                emailId: String(item.emailId),
+                message: String(item.message),
+            }));
 
-        //         await Company.insertMany(companies);
+            console.log("=======companies====", companies);
 
-        //         // res.status(200).json({ message: 'Companies added successfully' });
-        //         res.status(200).json({ success: true, msg: "Companies added successfully", data: "" });
-        //     } catch (error) {
-        //         res.status(500).json({ success: false, msg: error.message });
-        //     }
+            const company = await Company.insertMany(companies);
+            //console.log("=======company====", company);
+            res.status(200).json({ success: true, msg: "Companies added successfully", data: company });
+        } catch (error) {
+            res.status(500).json({ success: false, msg: error.message });
+        }
     }
 };
 

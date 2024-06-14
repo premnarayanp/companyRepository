@@ -4,7 +4,8 @@ import {
     DELETE_COMPANY_TO_LIST,
     UPDATE_COMPANY_TO_LIST,
     SHOW_COMPANY_FORM,
-    ADD_CURRENT_COMPANY_DATA
+    ADD_CURRENT_COMPANY_DATA,
+    ADD_EXCEL_DATA_TO_COMPANY_LIST,
 
 } from "./actionType"
 
@@ -54,5 +55,13 @@ export function addCurrentCompanyData(currentUserData) {
         currentUserData: currentUserData
     }
 }
+
+export function addExcelDataToCompanyList(data) {
+    return {
+        type: ADD_EXCEL_DATA_TO_COMPANY_LIST,
+        excelData: data,
+    }
+}
+
 
 

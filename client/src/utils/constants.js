@@ -9,7 +9,7 @@ export const API_URLS = {
   updateCompany: (id) => `${API_ROOT}/company/update-company/${id}`,
   deleteCompany: (id) => `${API_ROOT}/company/delete-company/${id}`,
   searchCompany: () => `${API_ROOT}/company/search`,
-  addExcelData: () => `${API_ROOT}/add-excel-data`,
+  addExcelData: () => `${API_ROOT}/company/add-excel-data`,
 };
 
 export const LOCAL_STORAGE_TOKEN_KEY = '_COMPANY_REPOSITORY_JS_';

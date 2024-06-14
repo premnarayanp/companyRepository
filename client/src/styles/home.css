@@ -34,6 +34,7 @@
 .table-container {
     height: 94%;
     overflow: hidden;
+    overflow-y: scroll;
 }
 
 .user_info_table {

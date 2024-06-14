@@ -121,3 +121,17 @@
     color: white;
     font-weight: 500;
 }
+
+.file_btn_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.upload_btn {
+    color: white;
+    border-radius: 2px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}

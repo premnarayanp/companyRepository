@@ -4,7 +4,8 @@ import {
     DELETE_COMPANY_TO_LIST,
     UPDATE_COMPANY_TO_LIST,
     SHOW_COMPANY_FORM,
-    ADD_CURRENT_COMPANY_DATA
+    ADD_CURRENT_COMPANY_DATA,
+    ADD_EXCEL_DATA_TO_COMPANY_LIST
 
 } from "../action/actionType"
 
@@ -68,6 +69,11 @@ export default function userReducer(state = initialUserState, action) {
                 currentCompanyData: action.currentUserData
             }
 
+        case ADD_EXCEL_DATA_TO_COMPANY_LIST:
+            return {
+                ...state,
+                companyList: [...state.companyList, ...action.excelData]
+            }
 
         default:
             return state;
