@@ -50,7 +50,7 @@ const UserForm = (props) => {
     const response = await addCompany({ companyName, emailId, message });
     if (response.success && response.data) {
 
-      addToast('Data added successfully created', {
+      addToast(response.message, {
         appearance: 'success',
       });
 

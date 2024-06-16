@@ -1,6 +1,7 @@
 // server/controllers/company_controller.js
 import Company from '../models/company.js';
 import xlsx from 'xlsx';
+import messageMailer from "../mailers/messageMailer.js"
 
 const companyController = {
     addCompany: async (req, res) => {
@@ -8,8 +9,21 @@ const companyController = {
             const { companyName, emailId, message } = req.body;
             const newCompany = new Company({ companyName, emailId, message });
             await newCompany.save();
-            res.status(201).json({ success: true, msg: "success", data: newCompany });
+
+            //Mailer code----------------------------------
+            let result = await messageMailer(req.body);
+            let mailTo = "";
+            //console.log("=======result===============", result);
+            if (result.success) {
+                mailTo = " Data added & successfully send Mail to " + result.info.accepted[0];
+                //mailTo = "Mail send  successfully";
+            } else {
+                mailTo = "unable to send Mail,Please try again";
+            }
+
+            res.status(201).json({ success: true, msg: mailTo, data: newCompany });
         } catch (error) {
+            console.log("=======error===============", error);
             res.status(500).json({ success: false, msg: error.message });
         }
     },
